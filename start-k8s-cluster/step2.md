@@ -29,7 +29,7 @@ We are creating flannel CNI
 `kubectl apply -f assets/flannel.yml`{{execute HOST1}}
 
 Wait for the pods to get ready, check the status uing the command: 
-`kubectl get pods --all-namespaces`{{execute}}
+`kubectl get pods --all-namespaces`{{execute HOST1}}
 
 Output:
 
@@ -49,7 +49,7 @@ Output:
 
 Again now do the health check . 
 
-`kubectl get nodes`{{execute}}
+`kubectl get nodes`{{execute HOST1}}
 
 Output:
 

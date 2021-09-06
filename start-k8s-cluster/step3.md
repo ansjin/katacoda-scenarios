@@ -13,33 +13,29 @@
 
 `cp keadm-v1.7.2-linux-amd64/keadm/keadm /usr/local/bin/keadm`{{execute HOST1}}
 
-##### Step4: Get host IP address
+##### Step4: Print host IP address
 
-`hostip=$(hostname -I | awk '{print $1}')`{{execute HOST1}}
-
-##### Step5: Print host IP address
-
-`echo $hostip`{{execute HOST1}}
+`echo [[HOST1_IP]]`{{execute HOST1}}
 
 
-##### Step6: Run keadm
+##### Step5: Run keadm
 
-`keadm init --advertise-address=$hostip`{{execute HOST1}}
+`keadm init --advertise-address=[[HOST1_IP]]`{{execute HOST1}}
 
-##### Step7: Create Cloud core service
+##### Step6: Create Cloud core service
 
 `ln -s /etc/kubeedge/cloudcore.service /etc/systemd/system/cloudcore.service`{{execute HOST1}}
 
-##### Step8: Restart Cloud core service
+##### Step7: Restart Cloud core service
 
 `sudo service cloudcore restart`{{execute HOST1}}
 
-##### Step9: Check logs of Cloud core service to see everything is running
+##### Step8: Check logs of Cloud core service to see everything is running
 
 `cat /var/log/kubeedge/cloudcore.log`{{execute HOST1}}
 
 
-##### Step10: Get token and copy it to be used for edge node
+##### Step9: Get token and copy it to be used for edge node
 
 `keadm gettoken`{{execute HOST1}}
 
@@ -59,4 +55,17 @@
 
 ##### Step4: Join edge node to cloud node
 
-`keadm join --cloudcore-ipport=[[KATACODA_HOST1]]:10000 --token=paste-token-from-above-here`{{copy HOST2}} 
+`keadm join --cloudcore-ipport=[[HOST1_IP]]:10000 --token=paste-token-from-above-here`{{copy HOST2}} 
+
+
+### Health Check
+
+`kubectl get nodes`{{execute HOST1}}
+
+Output:
+
+
+| NAME        | STATUS           | ROLES  |  AGE | VERSION|
+| ------------- |:-------------:| ---------:|-----:|---------------:|
+| controlplane     | Ready | master| 13m | v1.18.0|
+| node01         | Ready    |  agent,edge |   61s |     v1.19.3-kubeedge-v1.7.2 |
