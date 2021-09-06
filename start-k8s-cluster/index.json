@@ -1,0 +1,32 @@
+{
+    "title": "Start a k8-cluster",
+    "description": "Multi node Kubernetes cluster configured using Kubeadm",
+    "difficulty": "intermediate",
+    "time": "10-15 minutes",
+    "details": {
+      "steps": [
+        {
+          "title": "Step 1",
+          "text": "step1.md"
+        }
+      ],
+      "intro": {
+        "text": "intro.md",
+        "courseData": "courseBase.sh",
+        "credits": ""
+    },
+    "finish": {
+        "text": "finish.md"
+    },
+    "assets": {
+      "host01": [{"file": "dashboard.yaml", "target": "/root"}]
+    }
+    },
+    "environment": {
+      "hideintro": true,
+      "uilayout": "terminal-terminal"
+    },
+    "backend": {
+      "imageid": "kubernetes-cluster-running:1.18"
+    }
+}
