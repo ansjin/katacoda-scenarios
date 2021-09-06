@@ -27,7 +27,7 @@
         "text": "finish.md"
     },
     "assets": {
-      "host01": [{"file": "dashboard.yaml", "target": "assets"}, {"file": "flannel.yml", "target": "assets"}, {"file": "daemon.json", "target": "/etc/docker/daemon.json"}],
+      "host01": [{"file": "dashboard.yaml", "target": "assets"}, {"file": "flannel.yml", "target": "assets"}, {"file": "daemon.json", "target": "/etc/docker/daemon.json"}, {"file": "kubeadm-config.yml", "target": "assets"}],
       "host02": [{"file": "daemon.json", "target": "/etc/docker/daemon.json"}]
     }
     },
