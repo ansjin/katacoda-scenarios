@@ -16,6 +16,10 @@
         {
           "title": "Deploy Kubeedge",
           "text": "step3.md"
+        },
+        {
+          "title": "Enable Kubeedge Logs",
+          "text": "step4.md"
         }
       ],
       "intro": {
