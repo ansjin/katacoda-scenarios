@@ -1,12 +1,12 @@
 We need to run `kubeadm` which has been set and configured. 
 
-`apt-get remove kubelet kubectl kubernetes-cni -y{{execute HOST2}}`
+`apt-get remove kubelet kubectl kubernetes-cni -y`{{execute HOST2}}
 
-`systemctl daemon-reload{{execute HOST1}}`
-`service docker restart{{execute HOST1}}`
+`systemctl daemon-reload`{{execute HOST1}}
+`service docker restart`{{execute HOST1}}
 
-`systemctl daemon-reload{{execute HOST2}}`
-`service docker restart{{execute HOST2}}`
+`systemctl daemon-reload`{{execute HOST2}}
+`service docker restart`{{execute HOST2}}
 
 `docker info | grep -i cgroup`
 
