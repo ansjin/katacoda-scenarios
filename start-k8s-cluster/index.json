@@ -6,12 +6,16 @@
     "details": {
       "steps": [
         {
-          "title": "Step 1",
+          "title": "SStart Kubernetes Cluster",
           "text": "step1.md"
         },
         {
-          "title": "Step 2",
+          "title": "Deploy CNI plugin",
           "text": "step2.md"
+        },
+        {
+          "title": "Deploy Kubeedge",
+          "text": "step3.md"
         }
       ],
       "intro": {
