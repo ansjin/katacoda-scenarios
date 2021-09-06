@@ -19,7 +19,7 @@
         "text": "finish.md"
     },
     "assets": {
-      "host01": [{"file": "dashboard.yaml", "target": "/root"}]
+      "host01": [{"file": "dashboard.yaml", "target": "assets"}, {"file": "flannel.yml", "target": "assets"}]
     }
     },
     "environment": {
@@ -27,6 +27,6 @@
       "uilayout": "terminal-terminal"
     },
     "backend": {
-      "imageid": "kubernetes-cluster-running:1.18"
+      "imageid": "kubernetes-cluster:1.18"
     }
 }

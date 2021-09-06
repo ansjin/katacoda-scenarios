@@ -1,4 +1,6 @@
-This environment has a `launch.sh`{{execute}}
+We need to run `kubeadm` which has been set and configured. 
+
+`kubeadm init --kubernetes-version $(kubeadm version -o short) --pod-network-cidr=10.244.0.0/16`{{execute HOST1}}
 
 #### Health Check
 
@@ -12,5 +14,4 @@ Output:
 
 | NAME        | STATUS           | ROLES  |  AGE | VERSION|
 | ------------- |:-------------:| -----:|-----:|-----:|
-| master     | Ready | master| 13m| v1.18.0|
-| node01      | Ready      |  < none> |13m| v1.18.0|
+| control-place     | Ready | master| 13m| v1.18.0|
