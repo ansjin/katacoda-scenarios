@@ -1,0 +1,11 @@
+{
+    "exec-opts": ["native.cgroupdriver=cgroupfs"],
+    "log-driver": "json-file",
+    "log-opts": {
+      "max-size": "100m"
+    },
+    "bip":"172.18.0.1/24",
+    "storage-driver": "overlay",
+    "registry-mirrors": ["http://docker-registry-mirror.katacoda.com"],
+    "insecure-registries": ["registry.test.training.katacoda.com:4567", "docker-registry-mirror.katacoda.com"]
+}
