@@ -1,49 +1,58 @@
 ## Keadm Installation
 
-#### Keadm Installation on Cloud Side
-1. Get Keadm binaries
+### Keadm Installation on Cloud Side
+##### Get Keadm binaries
 
 `wget https://github.com/kubeedge/kubeedge/releases/download/v1.7.2/keadm-v1.7.2-linux-amd64.tar.gz --no-check-certificate`{{execute HOST1}}
 
-2. Unarchive keadm binaries
+##### Unarchive keadm binaries
 
 `tar -xvf keadm-v1.7.2-linux-amd64.tar.gz`{{execute HOST1}}
 
-3. copy them to bin folder
+##### copy them to bin folder
 
 `cp keadm-v1.7.2-linux-amd64/keadm/keadm /usr/local/bin/keadm`{{execute HOST1}}
 
+##### Get host IP address
 
-4. Run keadm
+`hostip=$(hostname -I | awk '{print $1}')`{{execute HOST1}}
 
-`keadm init --advertise-address=[[KATACODA_HOST1]]`{{execute HOST1}}
 
-5. Create Cloud core service
+##### Run keadm
+
+`keadm init --advertise-address=$hostip`{{execute HOST1}}
+
+##### Create Cloud core service
 
 `ln -s /etc/kubeedge/cloudcore.service /etc/systemd/system/cloudcore.service`{{execute HOST1}}
 
-6. Restart Cloud core service
+##### Restart Cloud core service
 
-`sudo service cloudcore start`{{execute HOST1}}
+`sudo service cloudcore restart`{{execute HOST1}}
 
-7. Get token and copy it to be used for edge node
+##### Check logs of Cloud core service to see everything is running
+
+`cat /var/log/kubeedge/cloudcore.log`{{execute HOST1}}
+
+
+##### Get token and copy it to be used for edge node
 
 `keadm gettoken`{{execute HOST1}}
 
 
-#### Keadm Installation on Edge Side
-1. Get Keadm binaries
+### Keadm Installation on Edge Side
+##### Get Keadm binaries
 
 `wget https://github.com/kubeedge/kubeedge/releases/download/v1.7.2/keadm-v1.7.2-linux-amd64.tar.gz --no-check-certificate`{{execute HOST2}}
 
-2. Unarchive keadm binaries
+##### Unarchive keadm binaries
 
 `tar -xvf keadm-v1.7.2-linux-amd64.tar.gz`{{execute HOST2}}
 
-3. copy them to bin folder
+##### copy them to bin folder
 
 `cp keadm-v1.7.2-linux-amd64/keadm/keadm /usr/local/bin/keadm`{{execute HOST2}}
 
-4. Join edge node to cloud node
+##### Join edge node to cloud node
 
-`keadm join --cloudcore-ipport=[[KATACODA_HOST1]]:10000 --token=paste-token-from-above-here`{{execute HOST2}} 
+`keadm join --cloudcore-ipport=[[KATACODA_HOST1]]:10000 --token=paste-token-from-above-here`{{copy HOST2}} 
