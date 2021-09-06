@@ -14,5 +14,5 @@ We need to run `kubeadm` which has been set and configured.
 
 `docker info | grep -i cgroup`{{execute HOST2}}
 
-`kubeadm init --config assets/kubeadm-config.yaml`{{execute HOST1}}
+`kubeadm init --kubernetes-version $(kubeadm version -o short) --pod-network-cidr=10.244.0.0/16`{{execute HOST1}}
 
