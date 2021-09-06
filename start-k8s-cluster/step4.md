@@ -43,3 +43,7 @@
 ##### Step3: restart Edge core service
 
 `systemctl restart edgecore.service`{{execute HOST2}}
+
+
+### Restart pods on cloud side which are pending
+`kubectl -n kube-system delete pods --field-selector=status.phase=Pending`{{execute HOST1}}
