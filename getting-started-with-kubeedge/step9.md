@@ -48,4 +48,4 @@ WantedBy=multi-user.target
 
 ### Check all pods status
 Wait for all the pods to get ready, check the status using the command: 
-`watch kubectl get pods --all-namespaces`{{execute HOST1}}
+`kubectl get pods --all-namespaces`{{execute HOST1}}

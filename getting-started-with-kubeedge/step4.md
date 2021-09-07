@@ -17,7 +17,7 @@ We are creating flannel CNI:
 `kubectl apply -f assets/flannel.yml`{{execute HOST1}}
 
 Wait for all the pods to get ready, check the status using the command: 
-`watch kubectl get pods --all-namespaces`{{execute HOST1}}
+`kubectl get pods --all-namespaces`{{execute HOST1}}
 
 Output:
 
