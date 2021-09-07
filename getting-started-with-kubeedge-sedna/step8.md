@@ -5,7 +5,7 @@ Generate the certificates for CloudStream on cloud node, however,
 the generation file is not in the /etc/kubeedge/, we need to copy it from the 
 repository.
 
-`wget wget https://raw.githubusercontent.com/kubeedge/kubeedge/master/build/tools/certgen.sh --no-check-certificate`{{execute HOST1}}
+`wget https://raw.githubusercontent.com/kubeedge/kubeedge/master/build/tools/certgen.sh --no-check-certificate`{{execute HOST1}}
 
 `mv certgen.sh /etc/kubeedge/certgen.sh`{{execute HOST1}}
 
@@ -45,23 +45,3 @@ Modify  `/etc/kubeedge/config/cloudcore.yaml`  to allow:
 ### Check Cloud core service logs
 
 `cat cloudcore.log`{{execute HOST1}}
-
-
-### Keadm logs enabling on Edge Side
-##### Step1: Modify `{'edgeStream': {'enable': true}}}`, `{'edged': {'clusterDNS': '10.96.0.10'}}`,  `{'edged': {'clusterDomain': 'cluster.local'}}`, `{'metaManager': {'metaServer': {'enable': true}}}`
-
-`vi /etc/kubeedge/config/edgecore.yaml`{{execute HOST2}}
-
-
-##### Step2: section=Service `Environment="CHECK_EDGECORE_ENVIRONMENT=false"`
-
-`vi /etc/kubeedge/edgecore.service`{{execute HOST2}}
-
-
-##### Step3: restart Edge core service
-
-`systemctl restart edgecore.service`{{execute HOST2}}
-
-
-### Restart pods on cloud side which are pending
-`kubectl -n kube-system delete pods --field-selector=status.phase=Pending`{{execute HOST1}}
