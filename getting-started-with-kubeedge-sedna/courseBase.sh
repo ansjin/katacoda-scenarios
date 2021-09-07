@@ -1,0 +1,1 @@
+ssh root@[[HOST1_IP]] "kubeadm reset"
