@@ -1,6 +1,6 @@
 {
-    "title": "Start a k8-cluster",
-    "description": "Multi node Kubernetes cluster configured using Kubeadm",
+    "title": "Getting Started with KubeEdge",
+    "description": "Multi node KubeEdge cluster configured using Keadm",
     "difficulty": "intermediate",
     "time": "10-15 minutes",
     "details": {
