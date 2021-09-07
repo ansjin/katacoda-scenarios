@@ -20,7 +20,7 @@ Set `CLOUDCOREIPS` env. The environment variable is set to specify the IP addres
 
 ### Generate certificates
 
-`./etc/kubeedge/certgen.sh stream`{{execute HOST1}}
+`bash /etc/kubeedge/certgen.sh stream`{{execute HOST1}}
 
 
 ### Set ip tables

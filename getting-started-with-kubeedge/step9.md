@@ -41,6 +41,7 @@ WantedBy=multi-user.target
 ### Restart Edge core service
 
 `systemctl restart edgecore.service`{{execute HOST2}}
+`systemctl daemon-reload`{{execute HOST2}}
 
 
 ### Restart pods on cloud side which are pending
