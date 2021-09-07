@@ -1,6 +1,6 @@
 {
-    "title": "Getting Started with KubeEdge",
-    "description": "Multi node KubeEdge cluster configured using Keadm",
+    "title": "Getting Started with KubeEdge and Sedna",
+    "description": "Multi node KubeEdge cluster configured using Keadm and sedna (EdgeAI) tool kit deployed on it",
     "difficulty": "intermediate",
     "time": "10-15 minutes",
     "details": {
